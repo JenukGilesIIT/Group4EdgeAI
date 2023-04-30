@@ -138,7 +138,7 @@ class ObjectDetection:
                             
                 if self.class_to_label(labels[i]) == "weapon":
                     msg_body = "Weapon detected on " + get_current_time()
-                    email_alert("POSSIBLE THREAT DETECTED", msg_body, "jenukgiles@gmail.com")
+                    email_alert("POSSIBLE THREAT DETECTED", msg_body, "jenukgiles@gmail.com") # email address can also be a phone number and can be used as email - to sms
                     row = cord[i]
                     if row[4] >= 0.8:
                         x1, y1, x2, y2 = int(row[0]*x_shape), int(row[1]*y_shape), int(row[2]*x_shape), int(row[3]*y_shape)
