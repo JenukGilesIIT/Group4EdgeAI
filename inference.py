@@ -153,8 +153,8 @@ class ObjectDetection:
     def upload_file_to_aws(self):
         client = boto3.client(
             's3',
-            aws_access_key_id = "AKIA6CLFRSPWCNQLXCXI",
-            aws_secret_access_key = "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"
+            aws_access_key_id = <access_key>,
+            aws_secret_access_key = <secret_access_key>
         )
 
         for file in os.listdir():
