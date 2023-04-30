@@ -1,0 +1,5 @@
+#accident-card-scroll {
+  max-height: 100vh;
+  overflow-y: scroll;
+  background-color: rgba(132, 99, 225, 0.73);
+}
