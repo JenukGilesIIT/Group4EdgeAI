@@ -3,12 +3,12 @@ import { Card } from "react-bootstrap";
 import { dateTimeFormat } from "../../../utilts/dateUtils";
 
 function AccidentCard(props) {
-  const { DetailsHandler, accident } = props;
+  const { index, DetailsHandler, accident } = props;
 
   return (
     <Card
       className="Home-side-card"
-      onClick={() => DetailsHandler(accident.id)}
+      onClick={() => DetailsHandler(index)}
     >
       <Card.Header>
         <Card.Title>
