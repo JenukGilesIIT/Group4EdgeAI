@@ -5,38 +5,27 @@ import "antd/dist/antd.css";
 import AccidentCard from "./HomeComponents/AccidentCard";
 import AccidentDetailContainer from "./HomeComponents/AccidentDetailContainer";
 import { useEffect, useState } from "react";
+import { get_accident_data } from "../../APIs/Api";
 
 function Home() {
 
   const [accidents, setAccidents] = useState([]);
   const [accidentDetails, setAccidentDetails] = useState("");
-  let da = new Date()
 
   useEffect(() => {
-    setAccidents([
-      {
-        id: 0,
-        status : "Accident",
-        date : da,
-        venue : "No.1, SomeStreet, SomeCity",
-        video : "Some Video 1"
-      },
-      {
-        id: 1,
-        status : "Accident",
-        date : da,
-        venue : "No.2, SomeStreet, SomeCity",
-        video : "Some Video 2"
-      },
-      {
-        id: 2,
-        status : "Accident",
-        date : da,
-        venue : "No.3, SomeStreet, SomeCity",
-        video : "Some Video 3"
-      }
-    ])
-  }, [])
+    const interval = setInterval(() => {
+      get_accident_data(getData);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [accidents]);
+
+  const getData = (newData) => {
+    if (accidents.length === 0 || accidents[0].id != newData.id){
+      setAccidents([newData, ...accidents]);
+    }
+    
+  };
 
   const DetailsHandler = (id) => {
     setAccidentDetails(accidents[id])
@@ -51,9 +40,10 @@ function Home() {
               {accidents.length != 0 ? (
                 <CTableDataCell>
                   <div className="mb-3 mt-3" id="accident-card-scroll">
-                    {accidents.map((accident) => (
-                      <div key={accident.id}>
+                    {accidents.reverse().map((accident, index) => (
+                      <div key={index}>
                         <AccidentCard
+                          index = {index}
                           DetailsHandler={DetailsHandler}
                           accident={accident}
                         />
