@@ -9,3 +9,4 @@ model_data is for tracking and it is NOT the weights for the custom Yolov5 model
 
 The models can not be uploaded due to the upload size limit constraints
 
+Motion_detect.ipynb contains the motion detection script for the model.  
