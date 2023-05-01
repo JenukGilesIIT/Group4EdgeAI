@@ -1,0 +1,14 @@
+.page-layout-nav-bar {
+    background-color: rgba(132, 99, 225, 0.73);
+    margin: auto
+}
+
+.page-layout-nav-bar-item-nav {
+    font-size: 19px;
+}
+
+.main-div {
+    position: relative;
+    margin-bottom: 63.77px;
+    min-height: 63vh;
+}

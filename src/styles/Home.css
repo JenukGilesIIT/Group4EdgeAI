@@ -1,0 +1,15 @@
+.Home-side-card {
+  width: 18rem;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.Home-main-card {
+  padding: 20px;
+  margin-top: 5px;
+  width: auto;
+}
+
+.Home-details-table-header {
+  width: 170px;
+}
