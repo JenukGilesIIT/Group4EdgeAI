@@ -10,3 +10,7 @@ model_data is for tracking and it is NOT the weights for the custom Yolov5 model
 The models can not be uploaded due to the upload size limit constraints
 
 Motion_detect.ipynb contains the motion detection script for the model.  
+
+Web app is built using React JS and it connects to the python script running the model.
+When an accident is detected, it will send the data to the web app.
+Web app is refreshing itself constantly(every 10 seconds) and will update the ui
